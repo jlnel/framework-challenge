@@ -1,4 +1,165 @@
 /* Add screen styles below */
-a.active {
+/* Custom green-themed accessibility styles */
+
+/* Skip link for keyboard navigation */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #198754;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    z-index: 1000;
+    border-radius: 0 0 4px 0;
+}
+
+.skip-link:focus {
+    top: 0;
+    color: white;
+}
+
+/* Enhanced focus styles for better accessibility */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.form-control:focus,
+.accordion-button:focus {
+    outline: 3px solid #198754;
+    outline-offset: 2px;
+}
+
+/* Custom green color enhancements */
+.bg-success {
+    background-color: #198754 !important;
+}
+
+.text-success {
+    color: #198754 !important;
+}
+
+.btn-success {
+    background-color: #198754;
+    border-color: #198754;
+}
+
+.btn-success:hover,
+.btn-success:focus {
+    background-color: #146c43;
+    border-color: #146c43;
+}
+
+/* Active navigation link styling */
+.nav-link.active {
     font-weight: bold;
+}
+
+/* Ensure good contrast for table headers */
+.table-success {
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+/* Custom alert styling */
+.alert-success {
+    background-color: #d1e7dd;
+    border-color: #badbcc;
+    color: #0f5132;
+}
+
+/* Card enhancements */
+.card {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card-header.bg-success {
+    background-color: #198754 !important;
+}
+
+/* Accordion custom styling */
+.accordion-button:not(.collapsed) {
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
+}
+
+/* List group styling */
+.list-group-item {
+    border-left: 3px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.list-group-item:hover {
+    border-left-color: #198754;
+    background-color: #f8f9fa;
+}
+
+/* Modal styling */
+.modal-header.bg-success {
+    background-color: #198754 !important;
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+    .display-4 {
+        font-size: 2.5rem;
+    }
+    
+    .lead {
+        font-size: 1.1rem;
+    }
+}
+
+/* Ensure minimum touch target sizes */
+.btn,
+.nav-link,
+.accordion-button {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .btn-success {
+        border: 2px solid currentColor;
+    }
+    
+    .card {
+        border: 2px solid #000;
+    }
+}
+
+/* Print styles */
+@media print {
+    .navbar,
+    .btn,
+    footer,
+    .modal {
+        display: none;
+    }
+    
+    .accordion-collapse {
+        display: block !important;
+        height: auto !important;
+    }
 }
